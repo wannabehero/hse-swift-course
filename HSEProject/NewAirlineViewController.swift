@@ -68,7 +68,7 @@ class NewAirlineViewController: UIViewController {
         
         //делаем запрос
         let code = textFieldCode.text
-        let URL = NSURL(string: "http://aita-amadeus-hack.appspot.com/api/1/airline?code=\(code)")
+        let URL = NSURL(string: "http://aita-amadeus-hack.appspot.com/api/1/airline?code=\(code)&format=json")
         let task = session.dataTaskWithURL(URL!) { data, response, error in
             
             if error != nil {
@@ -78,13 +78,16 @@ class NewAirlineViewController: UIViewController {
                     println("status code: \(response.statusCode)")
                 }
             } else {
-                let name = NSString(data: data, encoding: NSUTF8StringEncoding)  // == String
-                //обращение к UI элементу через главную очередь
-                NSOperationQueue.mainQueue().addOperationWithBlock({
-                    self.textFieldName.text = name
-                })
-                
-                println("got name -> \(name)")
+                //!! работа с JSON через стандартный класс
+                let json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String: AnyObject]
+                if let name = json?["name"] as? String {
+                    //обращение к UI элементу через главную очередь
+                    NSOperationQueue.mainQueue().addOperationWithBlock({
+                        self.textFieldName.text = name
+                    })
+                    
+                    println("got name -> \(name)")
+                }
             }
             
             //!! останавливаем анимацию индикатора
