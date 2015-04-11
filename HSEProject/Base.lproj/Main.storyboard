@@ -53,13 +53,13 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AA 100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RaR-bS-hCK">
                                             <rect key="frame" x="15" y="8" width="66" height="24"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="American Airlines American Airlines American Airlines American Airlines" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="pO5-gr-OnI">
                                             <rect key="frame" x="15" y="34" width="352" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -201,12 +201,18 @@
                                 <rect key="frame" x="16" y="90" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="textFieldCodeChanged:" destination="bUK-jt-emp" eventType="editingChanged" id="00O-Ig-WpR"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Название" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kA9-Qz-TEz">
                                 <rect key="frame" x="16" y="132" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="TIR-Bh-NeI">
+                                <rect key="frame" x="334" y="95" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -214,7 +220,10 @@
                             <constraint firstItem="kA9-Qz-TEz" firstAttribute="top" secondItem="t84-fC-6ry" secondAttribute="bottom" constant="12" id="84z-bD-jbo"/>
                             <constraint firstItem="t84-fC-6ry" firstAttribute="top" secondItem="kbv-xV-NPH" secondAttribute="bottom" constant="26" id="8V4-nC-0PP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kA9-Qz-TEz" secondAttribute="trailing" id="ApK-XP-euc"/>
+                            <constraint firstItem="TIR-Bh-NeI" firstAttribute="centerY" secondItem="t84-fC-6ry" secondAttribute="centerY" id="Spj-Tb-5gA"/>
+                            <constraint firstItem="TIR-Bh-NeI" firstAttribute="top" secondItem="t84-fC-6ry" secondAttribute="top" constant="5" id="T8a-wx-y4W"/>
                             <constraint firstAttribute="trailingMargin" secondItem="t84-fC-6ry" secondAttribute="trailing" id="g3m-PT-wHb"/>
+                            <constraint firstItem="TIR-Bh-NeI" firstAttribute="leading" secondItem="t84-fC-6ry" secondAttribute="trailing" constant="-25" id="jmi-M1-73o"/>
                             <constraint firstItem="t84-fC-6ry" firstAttribute="leading" secondItem="pTh-xv-0m3" secondAttribute="leadingMargin" id="rf7-dg-m5e"/>
                         </constraints>
                     </view>
@@ -231,6 +240,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="TIR-Bh-NeI" id="Y8l-X5-dSI"/>
                         <outlet property="textFieldCode" destination="t84-fC-6ry" id="APt-GU-RgI"/>
                         <outlet property="textFieldName" destination="kA9-Qz-TEz" id="N5m-w2-zmg"/>
                     </connections>
