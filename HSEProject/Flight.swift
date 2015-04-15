@@ -23,7 +23,7 @@ class Flight: NSManagedObject {
         
         var results = CoreDataHelper.instance.context.executeFetchRequest(request, error: nil)
         
-        return results as [Flight]
+        return results as! [Flight]
     }
 }
 

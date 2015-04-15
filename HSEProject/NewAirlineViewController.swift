@@ -43,7 +43,7 @@ class NewAirlineViewController: UIViewController {
         let code = textFieldCode.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         let name = textFieldName.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         
-        if countElements(code) == 0 || countElements(name) == 0 {
+        if count(code) == 0 || count(name) == 0 {
             return
         }
         
@@ -59,7 +59,7 @@ class NewAirlineViewController: UIViewController {
     
     @IBAction func textFieldCodeChanged(sender: AnyObject) {
         //выходим, если не 2 символа
-        if countElements(textFieldCode.text) != 2 {
+        if count(textFieldCode.text) != 2 {
             return
         }
         
@@ -79,7 +79,9 @@ class NewAirlineViewController: UIViewController {
                 }
             } else {
                 //!! работа с JSON через стандартный класс
-                let json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String: AnyObject]
+                let json = NSJSONSerialization
+                    .JSONObjectWithData(data, options: nil,
+                        error: nil) as? [String: AnyObject]
                 if let name = json?["name"] as? String {
                     //обращение к UI элементу через главную очередь
                     NSOperationQueue.mainQueue().addOperationWithBlock({
@@ -87,6 +89,10 @@ class NewAirlineViewController: UIViewController {
                     })
                     
                     println("got name -> \(name)")
+                } else {
+                    NSOperationQueue.mainQueue().addOperationWithBlock({
+                      self.showBadCodeAlert()
+                    })
                 }
             }
             
@@ -96,6 +102,20 @@ class NewAirlineViewController: UIViewController {
             }
         }
         task.resume()
+    }
+    
+    func showBadCodeAlert() {
+      let alert = UIAlertController(title: "Ошибка",
+        message: "Нет авиалинии с таким кодом",
+        preferredStyle: .Alert)
+        
+      let okAction = UIAlertAction(title: "ОК", style: .Cancel)
+        { alert in
+            println("pressed ok")
+        }
+        
+      alert.addAction(okAction)
+      presentViewController(alert, animated: true, completion: nil)
     }
 }
 

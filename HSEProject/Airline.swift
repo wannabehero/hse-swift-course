@@ -33,6 +33,6 @@ class Airline: NSManagedObject {
         
         var results = CoreDataHelper.instance.context.executeFetchRequest(request, error: nil)
         
-        return results as [Airline]
+        return results as! [Airline]
     }
 }

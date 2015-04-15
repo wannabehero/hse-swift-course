@@ -34,7 +34,8 @@ class FlightsViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("FlightCell", forIndexPath: indexPath) as FlightCell
+        let cell = tableView
+            .dequeueReusableCellWithIdentifier("FlightCell", forIndexPath: indexPath) as! FlightCell
 
         let flight = flights[indexPath.row]
         

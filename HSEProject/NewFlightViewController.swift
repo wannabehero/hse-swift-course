@@ -60,7 +60,7 @@ class NewFlightViewController: UIViewController {
         //!! берем текст и обрезаем с обеих сторон переносы строки и проблемы
         let number = textFieldNumber.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         
-        if countElements(number) == 0 {
+        if count(number) == 0 {
             return
         }
         

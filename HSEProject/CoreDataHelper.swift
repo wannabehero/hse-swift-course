@@ -23,7 +23,7 @@ class CoreDataHelper: NSObject {
         
         let fileManager = NSFileManager.defaultManager()
         let docsURL = fileManager.URLsForDirectory(
-            .DocumentDirectory, inDomains: .UserDomainMask).last as NSURL
+            .DocumentDirectory, inDomains: .UserDomainMask).last as! NSURL
         let storeURL = docsURL
             .URLByAppendingPathComponent("base.sqlite")
         
