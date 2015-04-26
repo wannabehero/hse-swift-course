@@ -16,14 +16,17 @@ class CoreDataHelper: NSObject {
     
     private override init() {
         let modelURL = NSBundle.mainBundle()
-            .URLForResource("Model",
-                withExtension: "momd")!
-        model = NSManagedObjectModel(
-            contentsOfURL: modelURL)!
+            .URLForResource("Model", withExtension: "momd")!
+        model = NSManagedObjectModel(contentsOfURL: modelURL)!
         
         let fileManager = NSFileManager.defaultManager()
-        let docsURL = fileManager.URLsForDirectory(
-            .DocumentDirectory, inDomains: .UserDomainMask).last as! NSURL
+        //!! локальное хранение
+//        let docsURL = fileManager.URLsForDirectory(
+//            .DocumentDirectory, inDomains: .UserDomainMask).last as! NSURL
+//
+        //!! хранение в AppGroups
+        let docsURL = fileManager.containerURLForSecurityApplicationGroupIdentifier("group.me.pronin.hsecourse")!
+        
         let storeURL = docsURL
             .URLByAppendingPathComponent("base.sqlite")
         

@@ -26,6 +26,15 @@
                                     <segue destination="QmI-6z-a2C" kind="show" id="gwE-87-EC7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vu5-AZ-byF">
+                                <rect key="frame" x="164" y="376" width="43" height="30"/>
+                                <state key="normal" title="Карта">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="VSh-Hn-ON5" kind="show" id="asj-WH-SDr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -35,6 +44,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.5" y="370.5"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="oGQ-D3-Ydg">
+            <objects>
+                <viewController id="VSh-Hn-ON5" customClass="MapViewController" customModule="HSEProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4aE-ir-hWy"/>
+                        <viewControllerLayoutGuide type="bottom" id="QiM-gz-xyt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="per-MF-eih">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eUB-Aa-MWM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="eUB-Aa-MWM" id="t9h-rY-YFR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BJE-rT-ONY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="634.5" y="370.5"/>
         </scene>
         <!--Рейсы-->
         <scene sceneID="Dgy-DP-6rA">
@@ -160,6 +195,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Новый рейс" id="rvg-Et-q0e"/>
                     <connections>
+                        <outlet property="constraintPickerBottom" destination="TIa-1Y-EcB" id="hTg-JJ-C8U"/>
                         <outlet property="pickerAirline" destination="N7n-aT-c0z" id="nUc-gK-Bvl"/>
                         <outlet property="textFieldAirline" destination="Xon-Jj-pfm" id="g7R-vx-hib"/>
                         <outlet property="textFieldNumber" destination="XiC-90-X4s" id="5gu-JO-rEM"/>

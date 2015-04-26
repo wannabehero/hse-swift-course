@@ -21,6 +21,16 @@
 		D5EFBB2E1AC59D1C00725EF5 /* FlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EFBB2D1AC59D1C00725EF5 /* FlightCell.swift */; };
 		D5EFBB351AC59FA800725EF5 /* NewFlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EFBB341AC59FA800725EF5 /* NewFlightViewController.swift */; };
 		D5EFBB371AC5A3E700725EF5 /* NewAirlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EFBB361AC5A3E700725EF5 /* NewAirlineViewController.swift */; };
+		D5F188801AE6B29200932A51 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F1887F1AE6B29200932A51 /* MapKit.framework */; };
+		D5F188821AE6B2D500932A51 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F188811AE6B2D500932A51 /* MapViewController.swift */; };
+		D5F1888B1AE6BA5C00932A51 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F1888A1AE6BA5C00932A51 /* NotificationCenter.framework */; };
+		D5F188901AE6BA5C00932A51 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1888F1AE6BA5C00932A51 /* TodayViewController.swift */; };
+		D5F188921AE6BA5C00932A51 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5F188911AE6BA5C00932A51 /* MainInterface.storyboard */; };
+		D5F188951AE6BA5C00932A51 /* HSEToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D5F188881AE6BA5C00932A51 /* HSEToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D5F1889A1AE6BAA400932A51 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B7B2B41AC1D0BC00C7D03E /* CoreDataHelper.swift */; };
+		D5F1889B1AE6BAA700932A51 /* Airline.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B7B2B01AC1D01E00C7D03E /* Airline.swift */; };
+		D5F1889D1AE6BAAD00932A51 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D5B7B2AD1AC1CD8400C7D03E /* Model.xcdatamodeld */; };
+		D5F1889E1AE6BDAD00932A51 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B7B2B21AC1D01E00C7D03E /* Flight.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +41,13 @@
 			remoteGlobalIDString = D54F53F31A9CD97100C64EED;
 			remoteInfo = HSEProject;
 		};
+		D5F188931AE6BA5C00932A51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D54F53EC1A9CD97100C64EED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5F188871AE6BA5C00932A51;
+			remoteInfo = HSEToday;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +57,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				D5F188951AE6BA5C00932A51 /* HSEToday.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +83,15 @@
 		D5EFBB2D1AC59D1C00725EF5 /* FlightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightCell.swift; sourceTree = "<group>"; };
 		D5EFBB341AC59FA800725EF5 /* NewFlightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFlightViewController.swift; sourceTree = "<group>"; };
 		D5EFBB361AC5A3E700725EF5 /* NewAirlineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAirlineViewController.swift; sourceTree = "<group>"; };
+		D5F1887F1AE6B29200932A51 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D5F188811AE6B2D500932A51 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		D5F188831AE6B94900932A51 /* HSEProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HSEProject.entitlements; sourceTree = "<group>"; };
+		D5F188881AE6BA5C00932A51 /* HSEToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HSEToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5F1888A1AE6BA5C00932A51 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		D5F1888E1AE6BA5C00932A51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5F1888F1AE6BA5C00932A51 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		D5F188911AE6BA5C00932A51 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		D5F188991AE6BA6700932A51 /* HSEToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HSEToday.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5F188801AE6B29200932A51 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,14 +110,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D5F188851AE6BA5C00932A51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5F1888B1AE6BA5C00932A51 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		D54F53EB1A9CD97100C64EED = {
 			isa = PBXGroup;
 			children = (
+				D5F1887F1AE6B29200932A51 /* MapKit.framework */,
 				D54F53F61A9CD97100C64EED /* HSEProject */,
 				D54F540C1A9CD97100C64EED /* HSEProjectTests */,
+				D5F1888C1AE6BA5C00932A51 /* HSEToday */,
+				D5F188891AE6BA5C00932A51 /* Frameworks */,
 				D54F53F51A9CD97100C64EED /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,6 +138,7 @@
 			children = (
 				D54F53F41A9CD97100C64EED /* HSEProject.app */,
 				D54F54091A9CD97100C64EED /* HSEProjectTests.xctest */,
+				D5F188881AE6BA5C00932A51 /* HSEToday.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,6 +146,7 @@
 		D54F53F61A9CD97100C64EED /* HSEProject */ = {
 			isa = PBXGroup;
 			children = (
+				D5F188831AE6B94900932A51 /* HSEProject.entitlements */,
 				D54F53F71A9CD97100C64EED /* Supporting Files */,
 				D5EFBB301AC59D4900725EF5 /* Resources */,
 				D54F53F91A9CD97100C64EED /* AppDelegate.swift */,
@@ -155,6 +196,7 @@
 			children = (
 				D54F53FB1A9CD97100C64EED /* ViewController.swift */,
 				D5EFBB321AC59D6800725EF5 /* Flights */,
+				D5F188811AE6B2D500932A51 /* MapViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -181,6 +223,33 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		D5F188891AE6BA5C00932A51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5F1888A1AE6BA5C00932A51 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5F1888C1AE6BA5C00932A51 /* HSEToday */ = {
+			isa = PBXGroup;
+			children = (
+				D5F188991AE6BA6700932A51 /* HSEToday.entitlements */,
+				D5F1888F1AE6BA5C00932A51 /* TodayViewController.swift */,
+				D5F188911AE6BA5C00932A51 /* MainInterface.storyboard */,
+				D5F1888D1AE6BA5C00932A51 /* Supporting Files */,
+			);
+			path = HSEToday;
+			sourceTree = "<group>";
+		};
+		D5F1888D1AE6BA5C00932A51 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D5F1888E1AE6BA5C00932A51 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -196,6 +265,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D5F188941AE6BA5C00932A51 /* PBXTargetDependency */,
 			);
 			name = HSEProject;
 			productName = HSEProject;
@@ -220,6 +290,23 @@
 			productReference = D54F54091A9CD97100C64EED /* HSEProjectTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		D5F188871AE6BA5C00932A51 /* HSEToday */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5F188961AE6BA5D00932A51 /* Build configuration list for PBXNativeTarget "HSEToday" */;
+			buildPhases = (
+				D5F188841AE6BA5C00932A51 /* Sources */,
+				D5F188851AE6BA5C00932A51 /* Frameworks */,
+				D5F188861AE6BA5C00932A51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HSEToday;
+			productName = HSEToday;
+			productReference = D5F188881AE6BA5C00932A51 /* HSEToday.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -231,10 +318,25 @@
 				TargetAttributes = {
 					D54F53F31A9CD97100C64EED = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = WDRAVGQ9R2;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					D54F54081A9CD97100C64EED = {
 						CreatedOnToolsVersion = 6.1.1;
 						TestTargetID = D54F53F31A9CD97100C64EED;
+					};
+					D5F188871AE6BA5C00932A51 = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = WDRAVGQ9R2;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -253,6 +355,7 @@
 			targets = (
 				D54F53F31A9CD97100C64EED /* HSEProject */,
 				D54F54081A9CD97100C64EED /* HSEProjectTests */,
+				D5F188871AE6BA5C00932A51 /* HSEToday */,
 			);
 		};
 /* End PBXProject section */
@@ -275,6 +378,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D5F188861AE6BA5C00932A51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5F188921AE6BA5C00932A51 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -282,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5F188821AE6B2D500932A51 /* MapViewController.swift in Sources */,
 				D5B7B2B51AC1D0BC00C7D03E /* CoreDataHelper.swift in Sources */,
 				D5EFBB2E1AC59D1C00725EF5 /* FlightCell.swift in Sources */,
 				D5B7B2B31AC1D01E00C7D03E /* Flight.swift in Sources */,
@@ -303,6 +415,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D5F188841AE6BA5C00932A51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5F1889B1AE6BAA700932A51 /* Airline.swift in Sources */,
+				D5F1889D1AE6BAAD00932A51 /* Model.xcdatamodeld in Sources */,
+				D5F1889A1AE6BAA400932A51 /* CoreDataHelper.swift in Sources */,
+				D5F1889E1AE6BDAD00932A51 /* Flight.swift in Sources */,
+				D5F188901AE6BA5C00932A51 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -310,6 +434,11 @@
 			isa = PBXTargetDependency;
 			target = D54F53F31A9CD97100C64EED /* HSEProject */;
 			targetProxy = D54F540A1A9CD97100C64EED /* PBXContainerItemProxy */;
+		};
+		D5F188941AE6BA5C00932A51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5F188871AE6BA5C00932A51 /* HSEToday */;
+			targetProxy = D5F188931AE6BA5C00932A51 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -414,10 +543,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HSEProject/HSEProject.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = HSEProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -426,10 +559,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HSEProject/HSEProject.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = HSEProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -468,6 +605,45 @@
 			};
 			name = Release;
 		};
+		D5F188971AE6BA5D00932A51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = HSEToday/HSEToday.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HSEToday/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D5F188981AE6BA5D00932A51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = HSEToday/HSEToday.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = HSEToday/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -494,6 +670,15 @@
 			buildConfigurations = (
 				D54F54171A9CD97100C64EED /* Debug */,
 				D54F54181A9CD97100C64EED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5F188961AE6BA5D00932A51 /* Build configuration list for PBXNativeTarget "HSEToday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5F188971AE6BA5D00932A51 /* Debug */,
+				D5F188981AE6BA5D00932A51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

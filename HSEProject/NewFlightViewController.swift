@@ -13,6 +13,7 @@ class NewFlightViewController: UIViewController {
     @IBOutlet weak var textFieldAirline: UITextField!
     @IBOutlet weak var textFieldNumber: UITextField!
     @IBOutlet weak var pickerAirline: UIPickerView!
+    @IBOutlet weak var constraintPickerBottom: NSLayoutConstraint!
     
     var airlines = [Airline]()
     
@@ -73,6 +74,33 @@ class NewFlightViewController: UIViewController {
         //!! возвращаемся на экран списка рейсов
         self.navigationController!.popViewControllerAnimated(true)  //!! переход на один экран "вверх" в стеке Navigation Controller
     }
+    
+    func showPicker() {
+        constraintPickerBottom.constant = -pickerAirline.frame.height
+        
+        pickerAirline.hidden = false
+        pickerAirline.layoutIfNeeded()
+        
+        UIView.animateWithDuration(0.3, animations: {
+            self.constraintPickerBottom.constant = 0
+            self.pickerAirline.layoutIfNeeded()
+        })
+    }
+    
+    func hidePicker() {
+        
+        UIView.animateWithDuration(0.3, animations: {
+                self.constraintPickerBottom.constant =
+                    -self.pickerAirline.frame.height
+                self.pickerAirline.layoutIfNeeded()
+            },
+            completion: { finished in
+                self.pickerAirline.hidden = true
+
+                //убрать из иерархии
+//                self.pickerAirline.removeFromSuperview()
+            })
+    }
 }
 
 extension NewFlightViewController: UIPickerViewDelegate {
@@ -108,10 +136,11 @@ extension NewFlightViewController: UITextFieldDelegate {
         //поле авиалинии нельзя редактировать вручную
         if textField == textFieldAirline {
             //но следует показать picker
-            pickerAirline.hidden = false
+            pickerAirline.hidden ? showPicker() : hidePicker()
+            
             //!! выберем первую авиалинию, если она есть, т.к. didSelect не сработает
             //TODO: попробуйте убрать это и посмотреть, что будет
-            if let airline = airlines.first {
+            if let airline = airlines.first where selectedAirline == nil {
                 selectedAirline = airline
                 textFieldAirline.text = airline.name
             }
